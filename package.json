@@ -1,0 +1,19 @@
+{
+  "name": "graphql-backend-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patrikduch/GraphQL-Backend-template.git"
+  },
+  "author": "Patrik Duch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patrikduch/GraphQL-Backend-template/issues"
+  },
+  "homepage": "https://github.com/patrikduch/GraphQL-Backend-template#readme"
+}
