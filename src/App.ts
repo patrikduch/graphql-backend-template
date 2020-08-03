@@ -1,9 +1,18 @@
 import  express  from "express";
+import  { graphqlHTTP } from "express-graphql";
+import UserSchema from "./shemas/schema";
+
+
 
 const app = express();
 
-app.listen(8080, () =>  {
 
+app.use('/graphql', graphqlHTTP({
+    schema: UserSchema,
+    graphiql: true,
+}));
+
+app.listen(8080, () =>  {
     console.log("Listening on port 8080")
 
 });
