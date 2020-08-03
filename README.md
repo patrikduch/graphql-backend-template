@@ -8,8 +8,5 @@ https://github.com/koajs/koa/issues/1305
 https://github.com/koajs/koa/issues/1305
 https://github.com/ZijianHe/koa-router/issues/257
 
-
-
-"express": "^4.17.1",
-"express-graphql": "^0.11.0",
-"graphql": "^15.3.0",
+# GraphQL-Express compatibility level
+https://github.com/graphql/express-graphql

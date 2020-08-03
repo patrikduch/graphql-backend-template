@@ -6,7 +6,7 @@ import lodash from 'lodash';
 const users = [
 
     {
-        id: 1,
+        id: '1',
         firstName: 'Tomáš',
         lastName: 'Silber',
         age: 2
@@ -14,7 +14,7 @@ const users = [
 
 
     {
-        id: 2,
+        id: '2',
         firstName: 'Patrik',
         lastName: 'Duch',
         age: 27
@@ -44,8 +44,8 @@ const RootQuery =  new GraphQLObjectType({
                 }
             },
 
-            resolve(args) {
-                return lodash.find(users, {id: args.id})
+            resolve: (_, fields) => {
+                return lodash.find(users, {id: fields.id});;
             }
         }
     }
