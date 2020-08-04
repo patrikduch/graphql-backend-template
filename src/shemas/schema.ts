@@ -3,7 +3,6 @@ import { GraphQLString, GraphQLObjectType, GraphQLSchema } from 'graphql';
 import lodash from 'lodash';
 import UserType from './user/user-schema';
 
-
 const users = [
 
     {
@@ -21,7 +20,6 @@ const users = [
         age: 27
     }
 ]
-
 
 const RootQuery =  new GraphQLObjectType({
     name: 'RootQueryType',
@@ -41,7 +39,6 @@ const RootQuery =  new GraphQLObjectType({
     }
 
 })
-
 
 
 const UserSchema = new GraphQLSchema({

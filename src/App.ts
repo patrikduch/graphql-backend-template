@@ -1,8 +1,6 @@
-import  express  from "express";
-import  { graphqlHTTP } from "express-graphql";
-import UserSchema from "./shemas/schema";
-
-
+import  express  from 'express';
+import  { graphqlHTTP } from 'express-graphql';
+import UserSchema from './shemas/schema';
 
 const app = express();
 
