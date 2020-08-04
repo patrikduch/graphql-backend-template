@@ -1,6 +1,7 @@
-import { GraphQLString, GraphQLInt, GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { GraphQLString, GraphQLObjectType, GraphQLSchema } from 'graphql';
 
 import lodash from 'lodash';
+import UserType from './user/user-schema';
 
 
 const users = [
@@ -20,17 +21,6 @@ const users = [
         age: 27
     }
 ]
-
-
-const UserType =  new GraphQLObjectType({
-    name: 'User',
-    fields: {
-        id: { type: GraphQLString } ,
-        firstName: { type: GraphQLString},
-        age: {type: GraphQLInt},
-    }
-})
-
 
 
 const RootQuery =  new GraphQLObjectType({
