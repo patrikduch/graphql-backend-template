@@ -8,7 +8,6 @@ import { Model, DataTypes } from "sequelize";
 class CompanyModel extends Model {
   public id!: number;
   public name!: string;
-
 }
 
 CompanyModel.init(

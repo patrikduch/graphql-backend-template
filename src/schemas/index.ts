@@ -6,6 +6,7 @@ import { TYPES } from "../ioc/types";
 import IUnitOfWork from '../typescript/interfaces/uow/IUnitOfWork';
 
 import CompanyModel from '../models/company/CompanyModel';
+import PositionModel from '../models/position/PositionModel'
 import ProjectDetailSchema from '../schemas/project-detail';
 import CompanyType from '../schemas/company'
 import PositionType from '../schemas/position';
@@ -49,8 +50,22 @@ const RootQuery =  new GraphQLObjectType({
                 return companyResult;
 
             }
+        },
+
+
+        position: {
+            type: PositionType,
+            args: {id: { type: GraphQLInt }},
+
+            resolve: async (parentValue, args) => {
+
+                const positionResult = await Uow.getRepository(PositionModel)
+                .findById(args.id);
+                
+                return positionResult;
+            }
         }
-    }
+    },
 })
 
 
