@@ -7,8 +7,9 @@ import { Model, DataTypes } from "sequelize";
  */
 class UserModel extends Model {
   public id!: number;
-  public name!: string;
-  public domainUrl!: string;
+  public firstName!: string;
+  public surname!: string;
+  public age!: number;
 }
 
 UserModel.init(

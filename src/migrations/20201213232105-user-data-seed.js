@@ -2,26 +2,37 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Position', [
+    
+    await queryInterface.bulkInsert('User', [
       {
-        "name": "Position 1",
+        "firstName": "Patrik",
+        "surname": "Duch",
+        "age": 27,
         "createdAt": new Date(),
         "updatedAt": new Date()
       },
 
       {
-        "name": "Position 2",
+        "firstName": "Michal",
+        "surname": "Duch",
+        "age": 41,
         "createdAt": new Date(),
         "updatedAt": new Date()
       },
 
       {
-        "name": "Position 3",
+        "firstName": "Petra",
+        "surname": "Duchová",
+        "age": 40,
         "createdAt": new Date(),
         "updatedAt": new Date()
       }
     
-    ]);
+    
+    
+    ])
+
+
   },
 
   down: async (queryInterface, Sequelize) => {

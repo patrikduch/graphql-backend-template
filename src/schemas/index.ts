@@ -19,6 +19,7 @@ import UserType from '../schemas/user';
 import ProjectDetail from '../models/project-detail/ProjectDetail';
 
 import _ from 'lodash';
+import UserModel from '../models/user/UserModel';
 
 const Uow = IoC.get<IUnitOfWork>(TYPES.IUnitOfWork);
 
@@ -64,7 +65,21 @@ const RootQuery =  new GraphQLObjectType({
                 
                 return positionResult;
             }
-        }
+        },
+
+      user: {
+          type: UserType,
+          args: {id: {type: GraphQLInt}},
+
+          resolve: async (parentValue, args) => {
+
+            const userResult = await Uow.getRepository(UserModel)
+            .findById(args.id);
+            
+            return userResult;
+
+          }
+      }
     },
 })
 
