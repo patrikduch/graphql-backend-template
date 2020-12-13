@@ -22,6 +22,7 @@ ProjectDetail.init(
     },
 
     domainUrl: {
+      field: 'domain_url',
       type: DataTypes.STRING,
       allowNull: false
     }
