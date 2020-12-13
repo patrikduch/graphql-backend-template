@@ -1,9 +1,9 @@
 {
 	"development": {
-		"username": "root",
-		"password": "root",
-		"database": "damechat",
-		"host": "localhost",
+		"username": "user",
+		"password": "password",
+		"database": "dbname",
+		"host": "hostname",
 		"dialect": "mysql",
 		"operatorsAliases": false
 	}
