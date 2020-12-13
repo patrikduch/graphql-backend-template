@@ -2,6 +2,9 @@ import Database from "../../util/database";
 import { Model, DataTypes } from "sequelize";
 
 
+/**
+ * @class ProjectDetail Model that represents basic information about current project.
+ */
 class ProjectDetail extends Model {
   public id!: number;
   public name!: string;

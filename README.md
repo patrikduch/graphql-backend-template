@@ -1,12 +1,6 @@
 npm install typings --global
 typings install --save mysql2
 
-# SEQUELIZE QUERING
-
-https://stackoverflow.com/questions/35445849/sequelize-findone-latest-entry
-
-https://github.com/sequelize/sequelize/issues/7840
-
 # MAX STRING DATA TYPE FOR SEQUELIZE
 
 https://stackoverflow.com/questions/45937174/how-to-define-an-nvarcharmax-field-with-sequelize/45945889
@@ -42,15 +36,20 @@ https://github.com/koajs/cors
 
 # Sequelize ORM
 
+## Querying
+
+https://stackoverflow.com/questions/35445849/sequelize-findone-latest-entry\
+https://github.com/sequelize/sequelize/issues/7840
+
 ## Migrations
 
 Must be runned from src directory.
 
-inicializování migrací
+## Migrations initialization
 
 sequelize init
 
-vytvoření modelu
+## Model creation
 
 sequelize model:create --name ProjectDetail --attributes name:string
 
@@ -66,7 +65,8 @@ sequelize db:migrate
 
 sequelize db:migrate:undo
 
-Zahození všech migrací
+### Revert all migrations
+
 sequelize db:migrate:undoall
 
 https://medium.com/@andrewoons/how-to-define-sequelize-associations-using-migrations-de4333bf75a7
@@ -142,19 +142,6 @@ down: (queryInterface, Sequelize) => {
 # GENERIC REPOSITORY
 
 https://khalilstemmler.com/articles/typescript-domain-driven-design/repository-dto-mapper/
-
-# UNIT TESTY
-
-https://stackoverflow.com/questions/54139158/cannot-find-name-describe-do-you-need-to-install-type-definitions-for-a-test
-
-# TEST-COVERAGE
-
-nyc
-https://www.npmjs.com/package/nyc
-
-# IMG UPLOADS
-
-https://github.com/aheckmann/gm/issues/455
 
 # SEQUELIZE CLI
 
