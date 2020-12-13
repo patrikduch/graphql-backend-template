@@ -1,24 +1,13 @@
-import connection from './connection.json';
+import connConfig from '../../config/config.json';
 import { Sequelize } from 'sequelize-typescript';
 
-export default connection.isDev
-	? new Sequelize(
-			connection.prod.databaseName,
-			connection.prod.username,
-			connection.prod.password,
+export default new Sequelize(
+			connConfig.development.database,
+			connConfig.development.username,
+			connConfig.development.password,
 			{
 				dialect: 'mysql',
 				dialectModule: require('mysql2'),
-				host: connection.prod.host
+				host: connConfig.development.host
 			}
-	  )
-	: new Sequelize(
-		connection.dev.databaseName,
-		connection.dev.username,
-		connection.dev.password,
-		{
-			dialect: 'mysql',
-			dialectModule: require('mysql2'),
-			host: connection.dev.host
-		}
-  );
+	  );

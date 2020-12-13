@@ -40,19 +40,11 @@ https://mherman.org/blog/building-a-restful-api-with-koa-and-postgres/
 
 https://github.com/koajs/cors
 
-# Sequelize
+# Sequelize ORM
 
-Je objektivně relační mapper (ORM). Jedná se o third party npm balíček.
+## Migrations
 
-static getInstance() {
-return new Sequelize('bachelorproject', 'admin', '007kokot', {
-dialect: 'mysql',
-dialectModule: require('mysql2'),
-host: '193.105.159.179'
-});
-}
-
-# Migrace
+Must be runned from src directory.
 
 inicializování migrací
 
@@ -62,11 +54,16 @@ vytvoření modelu
 
 sequelize model:create --name ProjectDetail --attributes name:string
 
-vytvoření nové migrace
+### Create a new migration
 
-sequelize migration:generate projectdetail --name initial-data2
+sequelize migration:generate --name project-detail-add-domain-url-attribute
 
-Zahození poslední migrace
+### Apply new migration
+
+sequelize db:migrate
+
+### Revert last migration
+
 sequelize db:migrate:undo
 
 Zahození všech migrací
@@ -146,14 +143,6 @@ down: (queryInterface, Sequelize) => {
 
 https://khalilstemmler.com/articles/typescript-domain-driven-design/repository-dto-mapper/
 
-# API DOC
-
-npm i apidoc
-
-https://www.npmjs.com/package/apidoc
-
-https://www.webpagetest.org/result/200113_0A_7ba17e03c7504247460a17fe57927e99/
-
 # UNIT TESTY
 
 https://stackoverflow.com/questions/54139158/cannot-find-name-describe-do-you-need-to-install-type-definitions-for-a-test
@@ -166,3 +155,11 @@ https://www.npmjs.com/package/nyc
 # IMG UPLOADS
 
 https://github.com/aheckmann/gm/issues/455
+
+# SEQUELIZE CLI
+
+'sequelize' is not recognized as an internal or external command,
+
+npm install -g sequelize
+npm i -g sequelize-cli
+npm install -g mysql2
