@@ -1,5 +1,5 @@
 
-import { GraphQLObjectType, GraphQLSchema } from 'graphql';
+import { GraphQLObjectType, GraphQLSchema, GraphQLInt } from 'graphql';
 import ProjectDetailSchema from '../schemas/project-detail';
 
 
@@ -15,8 +15,13 @@ const RootQuery =  new GraphQLObjectType({
     fields: {
         projectDetail: {
             type: ProjectDetailSchema,
-            resolve: async (_) => {
-                const projectDetailResult = await Uow.getRepository(ProjectDetail).findFirst();
+            args: {id: {type: GraphQLInt}},
+
+            resolve: async (parentValue, args) => {
+                
+                const projectDetailResult = await Uow.getRepository(ProjectDetail)
+                    .findById(args.id, {attributes: ['name']});
+
                 return projectDetailResult;
             }
         },
