@@ -1,6 +1,8 @@
 import Database from "../../util/database";
 import { Model, DataTypes } from "sequelize";
 
+import CompanyModel from '../company/CompanyModel';
+
 
 /**
  * @class UserModel Model that represents all available users.
@@ -10,6 +12,7 @@ class UserModel extends Model {
   public firstName!: string;
   public surname!: string;
   public age!: number;
+  public companyId!: number;
 }
 
 UserModel.init(
@@ -33,13 +36,20 @@ UserModel.init(
     age: {
         type: DataTypes.INTEGER,
         allowNull: false
-    }
+    },
+
+    companyId: {
+      type: DataTypes.INTEGER,
+    },
   },
   {
     sequelize: Database,
     tableName: "User"
   }
 );
+
+
+CompanyModel.belongsTo(UserModel, { foreignKey: "companyId" });
 
 
 export default UserModel;
