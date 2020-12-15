@@ -1,5 +1,6 @@
 import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql';
 
+
 /**
  * User node type definition.
  */

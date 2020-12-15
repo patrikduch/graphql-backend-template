@@ -49,7 +49,6 @@ const RootQuery =  new GraphQLObjectType({
                 .findById(args.id);
                 
                 return companyResult;
-
             }
         },
 
@@ -69,7 +68,7 @@ const RootQuery =  new GraphQLObjectType({
 
       user: {
           type: UserType,
-          args: {id: {type: GraphQLInt}},
+          args: { id: {type: GraphQLInt} },
 
           resolve: async (parentValue, args) => {
 

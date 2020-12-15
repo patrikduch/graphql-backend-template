@@ -49,7 +49,7 @@ UserModel.init(
 );
 
 
-CompanyModel.belongsTo(UserModel, { foreignKey: "companyId" });
+UserModel.belongsTo(CompanyModel, { foreignKey: "companyId" });
 
 
 export default UserModel;

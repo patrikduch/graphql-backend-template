@@ -67,6 +67,7 @@ class Repository implements IRepository {
    * @param id
    */
   async findById(id: number | string, props?: {attributes: string[]}): Promise<any> {
+
     const result = await this._model.findOne({
       attributes: props?.attributes,
       where: {

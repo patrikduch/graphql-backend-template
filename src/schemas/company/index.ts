@@ -9,7 +9,7 @@ const CompanyType = new GraphQLObjectType({
 
     fields: {
         id: { type: GraphQLInt },
-        name: { type: GraphQLString }
+        name: { type: GraphQLString },
     }
 });
 
