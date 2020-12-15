@@ -5,18 +5,16 @@ import IoC from "../ioc/inversify-config";
 import { TYPES } from "../ioc/types";
 import IUnitOfWork from '../typescript/interfaces/uow/IUnitOfWork';
 
+// models
 import CompanyModel from '../models/company/CompanyModel';
+import ProjectDetail from '../models/project-detail/ProjectDetail';
 import PositionModel from '../models/position/PositionModel'
+
+// schemas
 import ProjectDetailSchema from '../schemas/project-detail';
 import CompanyType from '../schemas/company'
 import PositionType from '../schemas/position';
 import UserType from '../schemas/user';
-
-
-
-
-
-import ProjectDetail from '../models/project-detail/ProjectDetail';
 
 import _ from 'lodash';
 import UserModel from '../models/user/UserModel';
