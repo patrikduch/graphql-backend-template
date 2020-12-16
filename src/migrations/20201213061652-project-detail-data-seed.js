@@ -2,6 +2,10 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    /**
+     * Add altering commands here.
+     * Return a promise to correctly handle asynchronicity.
+     */
     await queryInterface.bulkInsert('projectdetail', [
       {
         "name": "Project name",
@@ -13,11 +17,10 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
-     */
+    /*
+      Add reverting commands here.
+      Return a promise to correctly handle asynchronicity.
+    */
+    return queryInterface.bulkDelete('projectdetail',[{id:1}]);
   }
 };

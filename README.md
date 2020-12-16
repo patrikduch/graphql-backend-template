@@ -65,7 +65,7 @@ sequelize db:migrate:undo
 
 ### Revert all migrations
 
-sequelize db:migrate:undoall
+sequelize db:migrate:undo:all
 
 https://medium.com/@andrewoons/how-to-define-sequelize-associations-using-migrations-de4333bf75a7
 
@@ -105,11 +105,15 @@ down: (queryInterface, Sequelize) => {
 }
 };
 
-Řazení (order by)
-https://github.com/sequelize/sequelize/issues/4553
+### Delete data from entity
 
-Mazání v migracích
 http://www.innovaedge.com/2015/11/04/bulk-insertbulk-delete-in-sequelize-migrations/
+
+## Quering
+
+### Order by attribute
+
+https://github.com/sequelize/sequelize/issues/4553
 
 Joiny
 https://stackoverflow.com/questions/30052254/sequelize-include-where-filtering-by-a-parent-model-attribute

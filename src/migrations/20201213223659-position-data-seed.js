@@ -2,7 +2,11 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Position', [
+     /**
+      * Add altering commands here.
+      * Return a promise to correctly handle asynchronicity.
+     */
+    return await queryInterface.bulkInsert('position', [
       {
         "name": "Position 1",
         "createdAt": new Date(),
@@ -27,9 +31,10 @@ module.exports = {
   down: async (queryInterface, Sequelize) => {
     /**
      * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
+	   * Return a promise to correctly handle asynchronicity.
      */
+    return Promise.all[
+      queryInterface.bulkDelete('position')
+    ];
   }
 };

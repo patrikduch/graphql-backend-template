@@ -2,6 +2,10 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+	 /**
+      * Add altering commands here.
+      * Return a promise to correctly handle asynchronicity.
+     */
     return queryInterface.createTable('Company', {
 			id: {
 				allowNull: false,
@@ -24,6 +28,10 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
+    /**
+     * Add reverting commands here.
+	 * Return a promise to correctly handle asynchronicity.
+     */
     return queryInterface.dropTable('Company');
   }
 };

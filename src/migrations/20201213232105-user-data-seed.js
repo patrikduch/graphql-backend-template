@@ -2,8 +2,11 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    
-    await queryInterface.bulkInsert('User', [
+     /**
+      * Add altering commands here.
+      * Return a promise to correctly handle asynchronicity.
+     */
+    await queryInterface.bulkInsert('user', [
       {
         "firstName": "Patrik",
         "surname": "Duch",
@@ -28,19 +31,16 @@ module.exports = {
         "updatedAt": new Date()
       }
     
-    
-    
-    ])
-
-
+    ]);
   },
 
   down: async (queryInterface, Sequelize) => {
     /**
      * Add reverting commands here.
-     *
-     * Example:
-     * await queryInterface.dropTable('users');
+	   * Return a promise to correctly handle asynchronicity.
      */
+    return Promise.all[
+      queryInterface.bulkDelete('user')
+    ];
   }
 };
