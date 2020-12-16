@@ -69,6 +69,10 @@ sequelize db:migrate:undo:all
 
 https://medium.com/@andrewoons/how-to-define-sequelize-associations-using-migrations-de4333bf75a7
 
+### Adding or deleting columns
+
+https://stackoverflow.com/questions/46357533/how-to-add-delete-new-columns-in-sequelize-cli
+
 ### Add column with Foreign key
 
 "use strict";
@@ -105,6 +109,8 @@ down: (queryInterface, Sequelize) => {
 }
 };
 
+https://stackoverflow.com/questions/29904939/writing-migrations-with-foreign-keys-using-sequelizejs
+
 ### Delete data from entity
 
 http://www.innovaedge.com/2015/11/04/bulk-insertbulk-delete-in-sequelize-migrations/
@@ -115,11 +121,9 @@ http://www.innovaedge.com/2015/11/04/bulk-insertbulk-delete-in-sequelize-migrati
 
 https://github.com/sequelize/sequelize/issues/4553
 
-Joiny
-https://stackoverflow.com/questions/30052254/sequelize-include-where-filtering-by-a-parent-model-attribute
+### Joins
 
-Mazání / Přidávání attributů
-https://stackoverflow.com/questions/46357533/how-to-add-delete-new-columns-in-sequelize-cli
+https://stackoverflow.com/questions/30052254/sequelize-include-where-filtering-by-a-parent-model-attribute
 
 # GENERIC REPOSITORY
 
