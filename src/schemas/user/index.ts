@@ -1,11 +1,18 @@
-import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql';
-import CompanyType from '../company';
 
+import { GraphQLObjectType, GraphQLInt, GraphQLString } from 'graphql';
 
 import IoC from '../../ioc/inversify-config';
 import { TYPES } from '../../ioc/types';
 import IUnitOfWork from '../../typescript/interfaces/uow/IUnitOfWork';
+
+// models
 import CompanyModel from '../../models/company/CompanyModel';
+import PositionModel from '../../models/position/PositionModel';
+
+// schema types
+import CompanyType from '../company';
+import PositionType from '../position';
+
 
 const Uow = IoC.get<IUnitOfWork>(TYPES.IUnitOfWork);
 
@@ -30,8 +37,22 @@ const UserType =  new GraphQLObjectType({
 
                 return companyResult;
             }
+        },
+
+        position: {
+            type: PositionType,
+            resolve: async (parentValue, args) => {
+
+                const positionResult = await Uow.getRepository(PositionModel)
+                .findById(parentValue.dataValues.positionId);
+
+                return positionResult;
+            }
+
         }
     }   
 })
 
 export default UserType;
+
+

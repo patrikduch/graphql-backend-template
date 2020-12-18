@@ -2,6 +2,7 @@ import Database from "../../util/database";
 import { Model, DataTypes } from "sequelize";
 
 import CompanyModel from '../company/CompanyModel';
+import PositionModel from '../position/PositionModel';
 
 
 /**
@@ -13,6 +14,7 @@ class UserModel extends Model {
   public surname!: string;
   public age!: number;
   public companyId!: number;
+  public positionId!: number;
 }
 
 UserModel.init(
@@ -50,6 +52,7 @@ UserModel.init(
 
 
 UserModel.belongsTo(CompanyModel, { foreignKey: "companyId" });
+UserModel.belongsTo(PositionModel, { foreignKey: "positionId" });
 
 
 export default UserModel;
